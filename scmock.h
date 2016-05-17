@@ -1,3 +1,8 @@
+/* ==========================================
+ *  Simple Mock for C language
+ *  Copyright (c) 2016 datsuns <the.skeleton7@gmail.com>
+ *  [Released under MIT License]
+ * ========================================== */
 #ifndef SIMPLE_C_MOCK_H_INCLUDED
 #define SIMPLE_C_MOCK_H_INCLUDED
 
