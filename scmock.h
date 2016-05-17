@@ -3,9 +3,10 @@
 
 //--------------------------------
 // basic definition
-#define SCMOCK_PARAM(name, n)                  _scmock_param_##name##_##n
-#define SCMOCK_DECLARE_PARAM(name, type, n)    type SCMOCK_PARAM(name, n)
+#define SCMOCK_PARAM(name, n)                   _scmock_param_##name##_##n
+#define SCMOCK_DECLARE_PARAM(name, type, n)     type SCMOCK_PARAM(name, n)
 #define SCMOCK_RET(name)                        _scmock_ret_##name
+#define SCMOCK_DECLARE_RET_VAL(ret_type, name)  ret_type SCMOCK_RET(name)
 #define SCMOCK_SET_RET(name, v)                 SCMOCK_RET(name) = v
 
 //--------------------------------
@@ -29,7 +30,6 @@
 
 //--------------------------------
 // has return value
-#define SCMOCK_DECLARE_RET_VAL(ret_type, name)  ret_type SCMOCK_RET(name)
 
 #define SCMOCK_DECLARE_RET(ret_type, name)  \
   SCMOCK_DECLARE_RET_VAL(ret_type, name);   \
