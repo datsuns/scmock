@@ -15,7 +15,7 @@ int main(void){
   hello();
 
   hello2("hello");
-  assert( strcmp(SCMOCK_PARAM(hello2, 0), "hello") == 0 );
+  assert( strcmp(SCMOCK_PARAM_0(hello2), "hello") == 0 );
 
   SCMOCK_SET_RET(hello3, 1);
   assert(hello3() == 1);
@@ -23,16 +23,16 @@ int main(void){
   assert(hello3() == 2);
 
   hello4("abc", 10);
-  assert( strcmp(SCMOCK_PARAM(hello4, 0), "abc") == 0 );
-  assert( SCMOCK_PARAM(hello4, 1) == 10 );
+  assert( strcmp(SCMOCK_PARAM_0(hello4), "abc") == 0 );
+  assert( SCMOCK_PARAM_1(hello4) == 10 );
 
   SCMOCK_SET_RET(hello5, 1);
   assert(hello5(10) == 1);
-  assert( SCMOCK_PARAM(hello5, 0) == 10 );
+  assert( SCMOCK_PARAM_0(hello5) == 10 );
 
   SCMOCK_SET_RET(hello6, "ret");
   assert( strcmp(hello6(5, "param"), "ret") == 0 );
-  assert( SCMOCK_PARAM(hello6, 0) == 5 );
-  assert( strcmp(SCMOCK_PARAM(hello6, 1), "param") == 0 );
+  assert( SCMOCK_PARAM_0(hello6) == 5 );
+  assert( strcmp(SCMOCK_PARAM_1(hello6), "param") == 0 );
   return 0;
 }
