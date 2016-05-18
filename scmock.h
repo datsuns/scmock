@@ -35,7 +35,6 @@
 
 //--------------------------------
 // has return value
-
 #define SCMOCK_DECLARE_RET(ret_type, name)  \
   SCMOCK_DECLARE_RET_VAL(ret_type, name);   \
   ret_type name( void ){                    \
@@ -47,6 +46,16 @@
   SCMOCK_DECLARE_RET_VAL(ret_type, name);   \
   ret_type name(type0 p0){                  \
     SCMOCK_PARAM(name, 0) = p0;             \
+    return SCMOCK_RET(name);                \
+  }
+
+#define SCMOCK_DECLARE_RET_P2(ret_type, name, type0, type1)  \
+  SCMOCK_DECLARE_PARAM(name, type0, 0);     \
+  SCMOCK_DECLARE_PARAM(name, type1, 1);     \
+  SCMOCK_DECLARE_RET_VAL(ret_type, name);   \
+  ret_type name(type0 p0, type1 p1){        \
+    SCMOCK_PARAM(name, 0) = p0;             \
+    SCMOCK_PARAM(name, 1) = p1;             \
     return SCMOCK_RET(name);                \
   }
 
