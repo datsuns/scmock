@@ -8,11 +8,12 @@
 
 //--------------------------------
 // basic definition
-#define SCMOCK_PARAM(name, n)                   _scmock_param_##name##_##n
-#define SCMOCK_PARAM_0(name)                    SCMOCK_PARAM(name, 0)
-#define SCMOCK_PARAM_1(name)                    SCMOCK_PARAM(name, 1)
+#define SCMOCK_PARAM_N(name, n)                 _scmock_param_##name##_##n
+#define SCMOCK_PARAM(name)                      SCMOCK_PARAM_N(name, 0)
+#define SCMOCK_PARAM_0(name)                    SCMOCK_PARAM_N(name, 0)
+#define SCMOCK_PARAM_1(name)                    SCMOCK_PARAM_N(name, 1)
 
-#define SCMOCK_DECLARE_PARAM(name, type, n)     static type SCMOCK_PARAM(name, n)
+#define SCMOCK_DECLARE_PARAM(name, type, n)     static type SCMOCK_PARAM_N(name, n)
 #define SCMOCK_DECLARE_PARAM_0(name, type)      SCMOCK_DECLARE_PARAM(name, type, 0)
 #define SCMOCK_DECLARE_PARAM_1(name, type)      SCMOCK_DECLARE_PARAM(name, type, 1)
 

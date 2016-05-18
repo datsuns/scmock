@@ -15,7 +15,7 @@ int main(void){
   hello();
 
   hello2("hello");
-  assert( strcmp(SCMOCK_PARAM_0(hello2), "hello") == 0 );
+  assert( strcmp(SCMOCK_PARAM(hello2), "hello") == 0 );
 
   SCMOCK_SET_RET(hello3, 1);
   assert(hello3() == 1);
@@ -28,7 +28,7 @@ int main(void){
 
   SCMOCK_SET_RET(hello5, 1);
   assert(hello5(10) == 1);
-  assert( SCMOCK_PARAM_0(hello5) == 10 );
+  assert( SCMOCK_PARAM(hello5) == 10 );
 
   SCMOCK_SET_RET(hello6, "ret");
   assert( strcmp(hello6(5, "param"), "ret") == 0 );
