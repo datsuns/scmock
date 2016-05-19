@@ -34,5 +34,7 @@ int main(void){
   assert( strcmp(hello6(5, "param"), "ret") == 0 );
   assert( SCMOCK_PARAM_0(hello6) == 5 );
   assert( strcmp(SCMOCK_PARAM_1(hello6), "param") == 0 );
+
+  printf("PASS.\n");
   return 0;
 }
